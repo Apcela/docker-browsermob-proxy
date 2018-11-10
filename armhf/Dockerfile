@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM ubuntu:16.04
+FROM arm32v7/ubuntu:16.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -19,7 +19,7 @@ RUN apt-get update -qqy \
     unzip \
     wget \
   && rm -rf /var/lib/apt/lists/* \
-  && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
+  && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-*/jre/lib/security/java.security
 
 # BMP install
 ENV BMP_VERSION 2.1.4

@@ -18,3 +18,4 @@ echo "" >> Dockerfile
 cat ../template/Dockerfile.txt >> Dockerfile
 
 cp ../template/start.sh ./
+cp ../template/README.md ./
